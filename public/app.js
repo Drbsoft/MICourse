@@ -28,7 +28,7 @@ headacheSlider.addEventListener('input', () => {
 
 fatigueSlider.addEventListener('input', () => {
   fatigueValue.textContent = fatigueSlider.value;
-  setSliderFill(fatigueSlider, '#d97706');
+  setSliderFill(fatigueSlider, '#1b06d9');
 });
 
 // Initialise fills on load
