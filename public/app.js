@@ -32,8 +32,8 @@ fatigueSlider.addEventListener('input', () => {
 });
 
 // Initialise fills on load
-setSliderFill(headacheSlider, '#dc2626');
-setSliderFill(fatigueSlider,  '#d97706');
+setSliderFill(headacheSlider, '#911212');
+setSliderFill(fatigueSlider,  '#2606d9');
 
 // ── Geolocation helper ────────────────────────────────────────────────────────
 function getLocation() {
