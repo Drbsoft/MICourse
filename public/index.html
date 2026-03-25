@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#764ba2" />
+  <meta name="description" content="Jelezd, hogy érzed magad, és nézd meg, mások is érzik-e ugyanezt a közeledben." />
+  <title>Fejfájás.hu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- ── Input card ─────────────────────────────────────────────── -->
+    <div class="card" id="inputCard">
+      <header class="app-header">
+        <div class="logo" aria-hidden="true">💆</div>
+        <h1>Fejfájás.hu</h1>
+        <p class="subtitle">Hogy érzed most magad?</p>
+      </header>
+
+      <div class="form">
+        <!-- Headache slider -->
+        <div class="slider-group">
+          <div class="slider-header">
+            <label class="slider-label" for="headache">
+              <span class="slider-icon" aria-hidden="true">🤕</span>
+              Fejfájás
+            </label>
+            <span class="slider-value" id="headacheValue" aria-live="polite">5</span>
+          </div>
+          <input
+            type="range" id="headache" name="headache"
+            min="0" max="10" value="5"
+            class="slider slider-headache"
+            aria-label="Fejfájás mértéke 0-tól 10-ig"
+          />
+          <div class="slider-ticks" aria-hidden="true">
+            <span>Semmi</span><span>Közepes</span><span>Erős</span>
+          </div>
+        </div>
+
+        <!-- Fatigue slider -->
+        <div class="slider-group">
+          <div class="slider-header">
+            <label class="slider-label" for="fatigue">
+              <span class="slider-icon" aria-hidden="true">😴</span>
+              Fáradtság
+            </label>
+            <span class="slider-value" id="fatigueValue" aria-live="polite">5</span>
+          </div>
+          <input
+            type="range" id="fatigue" name="fatigue"
+            min="0" max="10" value="5"
+            class="slider slider-fatigue"
+            aria-label="Fáradtság mértéke 0-tól 10-ig"
+          />
+          <div class="slider-ticks" aria-hidden="true">
+            <span>Friss</span><span>Fáradt</span><span>Kimerült</span>
+          </div>
+        </div>
+
+        <button id="submitBtn" class="submit-btn" type="button">
+          <span id="btnText">Beküld &amp; Megnéz</span>
+          <span id="btnLoader" class="loader hidden" aria-hidden="true"></span>
+        </button>
+
+        <p class="disclaimer">
+          Az adatbeküldés anonim. Koordinátáid csak a közelség meghatározásához
+          kerülnek felhasználásra.
+        </p>
+      </div>
+    </div>
+
+    <!-- ── Result card ────────────────────────────────────────────── -->
+    <div class="card result-card hidden" id="resultCard" aria-live="polite">
+      <div class="result-icon" id="resultIcon" aria-hidden="true">🌍</div>
+      <div class="result-count" id="resultCount">0</div>
+      <div class="result-label">hasonló bejelentés a közeledben</div>
+      <p class="result-message" id="resultMessage"></p>
+      <p class="result-meta"    id="resultMeta"></p>
+      <button class="back-btn" id="backBtn" type="button">← Új bejelentés</button>
+    </div>
+
+    <!-- ── Error card ─────────────────────────────────────────────── -->
+    <div class="card error-card hidden" id="errorCard" role="alert">
+      <div class="error-icon" aria-hidden="true">📍</div>
+      <h2>Hiba</h2>
+      <p id="errorMessage">Nem sikerült meghatározni a helyzeted.</p>
+      <button class="back-btn" id="errorBackBtn" type="button">← Vissza</button>
+    </div>
+
+  </div><!-- .app -->
+
+  <script src="app.js"></script>
+</body>
+</html>
