@@ -1,0 +1,13 @@
+[build]
+  publish   = "public"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+# /api/symptoms → /.netlify/functions/symptoms (a frontend kód változatlan marad)
+[[redirects]]
+  from   = "/api/symptoms"
+  to     = "/.netlify/functions/symptoms"
+  status = 200
+  force  = true
